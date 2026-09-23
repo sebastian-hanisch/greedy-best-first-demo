@@ -1,5 +1,7 @@
 # Greedy Best-First Search – schnell, aber nicht optimal – Streamlit-Demo
 
+**[→ Demo live ausprobieren](https://sebastianhanisch-greedy-best-first-demo.streamlit.app/)**
+
 Erstes Stück (Wurzel) einer neuen **Heuristische-Baumsuche-Linie** der "Konzepte"-Reihe für die Website "Sebastian Hanisch – Operations Research und Machine Learning" - eine dritte, eigenständige Such-Säule des Portfolios neben der exakten Baumsuche ([branch-bound-demo](../branch-bound-demo)-Familie: vollständig, schrankenbasiertes Pruning) und der populationsbasierten lokalen Verbesserung ([hill-climbing-demo](../hill-climbing-demo)-Familie: vollständige Lösungen werden gestört/rekombiniert): **systematische konstruktive Suche** - Teillösungen werden Schritt für Schritt aufgebaut, informiert durch eine Heuristik, Vollständigkeit bewusst gegen Geschwindigkeit getauscht.
 
 **Einordnung in die Linie:** **Greedy Best-First Search (GBFS)** expandiert in jedem Schritt den einen Knoten, der laut geradliniger Entfernung zum Ziel **h(n)** am vielversprechendsten aussieht - der bislang aufgelaufene Pfadwert **g(n)** fließt NICHT in die Wahl ein, und ein einmal expandierter Knoten wird nie wieder aufgegriffen (kein Backtracking). Vergleichsgröße: **Uniform-Cost-Search** (Dijkstra, Priorität = g(n)) als exakte Referenz - derselbe Suchkern (`_search`), nur eine andere Prioritätsformel, legt die Grundlage für das spätere A*-Stück (Priorität = g(n)+h(n)).

@@ -18,8 +18,8 @@ def lock_axes(fig):
     return fig
 
 
-def _base(fig, height):
-    fig.update_layout(height=height, margin=dict(l=10, r=10, t=10, b=10), legend=dict(orientation="h", y=-0.1), plot_bgcolor="rgba(0,0,0,0)")
+def _base(fig, height, legend_y=-0.1):
+    fig.update_layout(height=height, margin=dict(l=10, r=10, t=10, b=10), legend=dict(orientation="h", y=legend_y), plot_bgcolor="rgba(0,0,0,0)")
     return lock_axes(fig)
 
 
@@ -85,8 +85,8 @@ def build_sweep(rows, param_label, key, y_label, color=GBFS_COLOR):
     upper = [y + s for y, s in zip(ys, sd)]
     lower = [max(0.0, y - s) for y, s in zip(ys, sd)]
     fig = go.Figure()
-    fig.add_trace(go.Scatter(x=xs + xs[::-1], y=upper + lower[::-1], fill="toself", fillcolor="rgba(228,87,86,0.15)", line=dict(width=0), showlegend=False, hoverinfo="skip"))
+    fig.add_trace(go.Scatter(x=xs + xs[::-1], y=upper + lower[::-1], mode="lines", fill="toself", fillcolor="rgba(228,87,86,0.15)", line=dict(width=0), showlegend=False, hoverinfo="skip"))
     fig.add_trace(go.Scatter(x=xs, y=ys, mode="lines+markers", line=dict(color=color, width=2.5), name=y_label))
     fig.update_xaxes(title_text=param_label)
     fig.update_yaxes(title_text=y_label)
-    return _base(fig, 360)
+    return _base(fig, 360, legend_y=-0.3)

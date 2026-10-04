@@ -10,13 +10,13 @@ Erstes Stück (Wurzel) einer neuen **Heuristische-Baumsuche-Linie** der "Konzept
 Greedy Best-First Search (Wurzel: expandiert IMMER den einen vielversprechendsten Knoten allein nach h(n),
      kein Backtracking - ein einziger irreführender Heuristikwert führt in eine Sackgasse ohne Weg zurück)
                                                                                             [DIESES STÜCK]
- ├─ Beam Search → {Diverse Beam Search, Monobeam}                                          [nicht gebaut]
- ├─ A* → Iterative Deepening A* (IDA*)                                                      [nicht gebaut]
- └─ Monte Carlo Tree Search (MCTS)                                                          [nicht gebaut]
-Beam Search + A* → Beam Stack Search (Konvergenzpunkt)                                      [nicht gebaut]
+ ├─ Beam Search → {Diverse Beam Search, Monobeam}                                          [gebaut]
+ ├─ A* → Iterative Deepening A* (IDA*)                                                      [gebaut]
+ └─ Monte Carlo Tree Search (MCTS)                                                          [gebaut]
+Beam Search + A* → Beam Stack Search (Konvergenzpunkt)                                      [gebaut]
 ```
 
-Ergebnis in Kürze: **GBFS ist klar effizienter** - im Mittel nur ein Fünftel so viele Knoten-Expansionen wie die optimale Referenz (Effizienzverhältnis 4.99x beim Standardfall, bis 9.72x bei größeren Rastern) - und in über 400 getesteten Instanzen NIE weniger effizient. Aber **die Vorab-Vermutung "mehr Hindernisse = größere Optimalitätslücke" ist FALSCH** - gemessen ist es genau umgekehrt: die Lücke ist am GRÖSSTEN auf offenem Feld (22.1 % im Mittel bei 0 % Hindernissen) und sinkt mit mehr Hindernissen (4.1 % bei 40 %) - weniger Routen-Alternativen lassen GBFS schlicht weniger Gelegenheit, sich für die falsche Abzweigung zu entscheiden.
+Ergebnis in Kürze: **GBFS ist klar effizienter** - im Mittel nur ein Fünftel so viele Knoten-Expansionen wie die optimale Referenz (Effizienzverhältnis 4.99x beim Standardfall, bis 8.5x bei größeren Rastern, Rastergröße 22) - und in über 400 getesteten Instanzen NIE weniger effizient. Aber **die Vorab-Vermutung "mehr Hindernisse = größere Optimalitätslücke" ist FALSCH** - gemessen ist es genau umgekehrt: die Lücke ist am GRÖSSTEN auf offenem Feld (22.1 % im Mittel bei 0 % Hindernissen) und sinkt mit mehr Hindernissen (4.1 % bei 40 %) - weniger Routen-Alternativen lassen GBFS schlicht weniger Gelegenheit, sich für die falsche Abzweigung zu entscheiden.
 
 | Frage | Ergebnis (Rastergröße 12, Hindernisdichte 15 %, sofern nicht anders angegeben; Mittel über 5 feste Instanzen, Seeds 100000–100004; vollständig deterministisch, kein Ketten-Mittel nötig) |
 |---|---|
@@ -94,6 +94,4 @@ pytest tests/ -v
 
 ---
 
-Teil des [Operations-Research-Demo-Portfolios](https://sebastianhanisch.net/demos.html) von
-[Sebastian Hanisch](https://sebastianhanisch.net) – Operations Research und Machine Learning.
-Interesse an einer maßgeschneiderten Lösung? [Kontakt aufnehmen](https://sebastianhanisch.net/kontakt.html).
+Diese Demo ist Teil des Portfolios von [Sebastian Hanisch](https://sebastianhanisch.net) – Operations Research und Machine Learning ([Über mich](https://sebastianhanisch.net/ueber-mich.html)). Mehr zur Reihe: [Heuristische Baumsuche: Greedy bis MCTS](https://sebastianhanisch.net/konzepte-heuristische-baumsuche.html).

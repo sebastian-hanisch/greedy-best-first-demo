@@ -62,7 +62,7 @@ vermuten würde?
 """
 )
 st.caption(
-    "Wurzel der neuen Heuristische-Baumsuche-Linie der \"Konzepte\"-Reihe. Noch nicht gebaute Geschwister: "
+    "Wurzel der neuen Heuristische-Baumsuche-Linie der \"Konzepte\"-Reihe. Weitere Geschwister: "
     "Beam Search → {Diverse Beam Search, Monobeam}, A* → Iterative Deepening A* (IDA*), Monte Carlo Tree Search "
     "(MCTS), Beam Search + A* → Beam Stack Search (Konvergenzpunkt)."
 )
@@ -217,6 +217,6 @@ unterschiedlicher Prioritätsformel), `gbfs_graph.py`/`gbfs_scenario.py` (Graph,
 st.markdown("---")
 st.caption(
     "Diese Demo ist Teil des Portfolios von [Sebastian Hanisch](https://sebastianhanisch.net) – "
-    "Operations Research und Machine Learning. Interesse an einer maßgeschneiderten Lösung für "
-    "Ihr Unternehmen? [Kontakt aufnehmen](https://sebastianhanisch.net/kontakt.html)"
+    "Operations Research und Machine Learning ([Über mich](https://sebastianhanisch.net/ueber-mich.html)). "
+    "Mehr zur Reihe: [Heuristische Baumsuche: Greedy bis MCTS](https://sebastianhanisch.net/konzepte-heuristische-baumsuche.html)."
 )

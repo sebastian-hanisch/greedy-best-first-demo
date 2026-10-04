@@ -44,11 +44,11 @@ PRESETS = {
     "Großes Raster (Effizienzvorteil)": {"network": "grid", "side": 22, "obstacle_pct": 15, "seed": 35},
 }
 PRESET_HELP = {
-    "Standardfall (Voreinstellung)": "Rastergröße 12, Hindernisdichte 15 %: GBFS verbessert seinen Pfad im Mittel um 16.52 % SCHLECHTER als der optimale UCS-Pfad, expandiert dafür aber nur ein Fünftel so viele Knoten (Effizienzverhältnis 4.99x).",
+    "Standardfall (Voreinstellung)": "Rastergröße 12, Hindernisdichte 15 %: GBFS findet im Mittel einen um 16.52 % längeren Pfad als der optimale UCS-Pfad, expandiert dafür aber nur ein Fünftel so viele Knoten (Effizienzverhältnis 4.99x).",
     "Offenes Feld (größte Lücke im Mittel)": "Keine Hindernisse - überraschend die im Mittel GRÖSSTE Optimalitätslücke (22.1 % gegen 16.5 % beim Standardfall): auf offenem Feld gibt es am meisten gleichwertig aussehende Routen, in denen sich GBFS verlaufen kann.",
     "Viele Hindernisse (kleinere Lücke im Mittel)": "Hindernisdichte 40 % - gegen die Vorab-Vermutung im Mittel die KLEINERE Lücke (4.1 % statt 22.1 % bei 0 % Hindernissen): weniger Routen-Alternativen lassen GBFS weniger Gelegenheit, sich für die falsche zu entscheiden.",
     "Handgebaute Heuristik-Falle": "Ein von Hand gebauter 8-Knoten-Graph: GBFS verpflichtet sich auf einen köderhaft nah am Ziel liegenden Knoten und läuft einen 7.47 % längeren Korridor, statt den kürzeren Umweg mit größerem h(n) zu nehmen - ein konkretes Gegenbeispiel.",
-    "Großes Raster (Effizienzvorteil)": "Rastergröße 22 (418 statt 126 Knoten): das Effizienzverhältnis wächst auf 9.72x - GBFS' Vorsprung wird auf größeren Instanzen noch größer.",
+    "Großes Raster (Effizienzvorteil)": "Rastergröße 22 (418 statt 126 Knoten, Instanz-Seed 35): das Effizienzverhältnis wächst von 5.48x auf 9.72x (im Mittel über die 5 festen Instanzen: von 4.99x auf 8.5x) - GBFS' Vorsprung wird auf größeren Instanzen noch größer.",
 }
 # Beobachtete Spannweite der Optimalitätslücke über die 5 festen Sweep-Instanzen (mit Sicherheitsabstand) - diese
 # Suche ist vollständig deterministisch (kein Zufall im Suchkern), die Spannweite kommt allein aus der Geometrie.

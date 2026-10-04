@@ -2,8 +2,8 @@
 Sebastian Hanisch - Operations Research und Machine Learning
 
 Erstes Stück (Wurzel) der neuen Heuristische-Baumsuche-Linie der "Konzepte"-Reihe - eine dritte, eigenständige
-Such-Säule neben der exakten Baumsuche (branch-bound-demo-Familie) und der populationsbasierten lokalen
-Verbesserung (Hill-Climbing-Familie): systematische KONSTRUKTIVE Suche, die Vollständigkeit bewusst gegen
+Such-Säule neben der exakten Baumsuche (branch-bound-demo-Familie) und der lokalen Verbesserung
+vollständiger Lösungen (Metaheuristiken-Familie um Hill Climbing): systematische KONSTRUKTIVE Suche, die Vollständigkeit bewusst gegen
 Geschwindigkeit tauscht. Greedy Best-First Search expandiert immer den einen Knoten, der laut Heuristik h(n) am
 vielversprechendsten aussieht - ohne je den bisherigen Pfadwert g(n) zu berücksichtigen. Das macht die Suche
 sehr schnell, aber nicht optimal. Wie groß ist der Qualitätsverlust wirklich, und wovon hängt er ab? Muss
@@ -50,7 +50,7 @@ st.title("🧭 Greedy Best-First Search – schnell, aber nicht optimal")
 st.markdown(
     """
 **Erstes Stück einer neuen Konzepte-Linie: Heuristische Baumsuche** - eine dritte Such-Säule neben der exakten
-Baumsuche (`branch-bound-demo`) und der populationsbasierten lokalen Verbesserung (`hill-climbing-demo`):
+Baumsuche (`branch-bound-demo`) und der lokalen Verbesserung vollständiger Lösungen (Metaheuristiken, Wurzel `hill-climbing-demo`):
 Teillösungen werden Schritt für Schritt aufgebaut, informiert durch eine Heuristik.
 
 **Greedy Best-First Search (GBFS)** expandiert in jedem Schritt den einen Knoten, der laut geradliniger
